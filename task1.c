@@ -5,46 +5,46 @@
 #define MAX_USERNAME_LENGTH 20
 #define MAX_PASSWORD_LENGTH 20
 
-// User structure
+
 typedef struct {
     char username[MAX_USERNAME_LENGTH];
     char password[MAX_PASSWORD_LENGTH];
  } User;
 
-// Array of users
+
 User users[MAX_USERS];
 int numUsers = 0;
 
-// Function to register a new user
+
 void registerUser() {
     User newUser;
 
-    // Get username and password from user
+    
     printf("Enter username: ");
     scanf("%s", newUser.username);
 
     printf("Enter password: ");
     scanf("%s", newUser.password);
 
-    // Add the new user to the array of users
+    
     users[numUsers++] = newUser;
 
     printf("Registration successful!\n");
 }
 
-// Function to authenticate a user
+
 void loginUser() {
     char username[MAX_USERNAME_LENGTH];
     char password[MAX_PASSWORD_LENGTH];
 
-    // Get username and password from user
+    
     printf("Enter username: ");
     scanf("%s", username);
 
     printf("Enter password: ");
     scanf("%s", password);
 
-    // Check if the entered credentials match any registered user
+    
     for (int i = 0; i < numUsers; i++) {
         if (strcmp(username, users[i].username) == 0 && strcmp(password, users[i].password) == 0) {
             printf("Login successful!\n");
